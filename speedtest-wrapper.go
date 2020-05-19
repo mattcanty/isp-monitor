@@ -5,6 +5,16 @@ import (
 	"os/exec"
 )
 
+func runOoklaSpeedTest() (speedTestOutput, error) {
+	res := speedTestOutput{}
+	out, err := exec.Command("./speedtest", "--format=json").Output()
+	if err != nil {
+		return res, err
+	}
+	json.Unmarshal(out, &res)
+	return res, nil
+}
+
 type speedTestOutput struct {
 	Type      string
 	ISP       string
@@ -50,14 +60,4 @@ type speedTestServer struct {
 type speedTestResult struct {
 	ID  string
 	URL string
-}
-
-func runOoklaSpeedTest() (speedTestOutput, error) {
-	res := speedTestOutput{}
-	out, err := exec.Command("./speedtest", "--accept-gdpr", "--accept-license", "--format=json").Output()
-	if err != nil {
-		return res, err
-	}
-	json.Unmarshal(out, &res)
-	return res, nil
 }
