@@ -16,4 +16,8 @@ I could translate some of the data into something more digestible.
 
 Updated hourly!
 
-<iframe width="1054" height="575" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vShci_RCToKfLgX1LlFkoU7nCuG6QmcRx_HBr-DHJ2vP9uGsOdXe58SDfCVtX2hJ4xA0gClUAo6BMHp/pubchart?oid=2117232967&amp;format=interactive"></iframe>
+[![alt text][chart]][interactive-link]
+<sup>[View interactive version][interactive-link]</sup>
+
+[chart]: https://docs.google.com/spreadsheets/d/e/2PACX-1vShci_RCToKfLgX1LlFkoU7nCuG6QmcRx_HBr-DHJ2vP9uGsOdXe58SDfCVtX2hJ4xA0gClUAo6BMHp/pubchart?oid=2117232967&format=image "Google Sheets chart"
+[interactive-link]: https://docs.google.com/spreadsheets/d/e/2PACX-1vShci_RCToKfLgX1LlFkoU7nCuG6QmcRx_HBr-DHJ2vP9uGsOdXe58SDfCVtX2hJ4xA0gClUAo6BMHp/pubchart?oid=2117232967&format=interactive
