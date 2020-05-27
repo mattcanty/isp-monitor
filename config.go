@@ -7,25 +7,25 @@ import (
 
 type configuration struct {
 	GoogleSpreadsheet googleSpreadSheet
-	GoogleAuth googleAuth
+	GoogleAuth        googleAuth
 }
 
 type googleSpreadSheet struct {
-	ID string
+	ID    string
 	Range string
 }
 
 type googleAuth struct {
 	CredentialsPath string
-	TokenPath string
+	TokenPath       string
 }
 
 func configure() (configuration, error) {
 	conf := configuration{}
 	home, err := os.UserHomeDir()
 
-	if(err != nil){
-		return conf,err
+	if err != nil {
+		return conf, err
 	}
 
 	defaulConfigRoot := filepath.Join(home, ".config", "isp-monitor")
@@ -34,11 +34,11 @@ func configure() (configuration, error) {
 
 	googleAuth := googleAuth{
 		CredentialsPath: filepath.Join(googleSheetsAuthDir, "credentials.json"),
-		TokenPath: filepath.Join(googleSheetsAuthDir, "token.json"),
+		TokenPath:       filepath.Join(googleSheetsAuthDir, "token.json"),
 	}
 
 	googleSpreadSheet := googleSpreadSheet{
-		ID: "1rpUobs799LuviC5pGjk3sOd3KxfuM_M5BkzUO_OS1S0",
+		ID:    "1rpUobs799LuviC5pGjk3sOd3KxfuM_M5BkzUO_OS1S0",
 		Range: "A1",
 	}
 
@@ -46,4 +46,11 @@ func configure() (configuration, error) {
 	conf.GoogleAuth = googleAuth
 
 	return conf, nil
+}
+
+func getEnv(key, fallback string) string {
+	if value, ok := os.LookupEnv(key); ok {
+		return value
+	}
+	return fallback
 }
